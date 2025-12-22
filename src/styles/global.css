@@ -808,14 +808,16 @@ section {
 .trifold-content {
   position: absolute;
   inset: 0;
+  /* Mengunci ke semua sisi container */
+  width: 100%;
+  height: 100%;
+  /* Mengikuti tinggi aspect-ratio container */
   background: #fffaf3;
   border: 4px solid #fbcad1;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
-  overflow: hidden;
-  /* Mencegah foto keluar jalur */
 }
 
 .photo-center {
