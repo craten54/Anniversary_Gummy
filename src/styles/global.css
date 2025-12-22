@@ -784,8 +784,9 @@ section {
 .trifold-content {
   position: absolute;
   inset: 0;
+  height: 130%;
   background: #fffaf3;
-  border: 4px solid #fbcad1;
+  border: 2px solid #713229;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -802,7 +803,7 @@ section {
   position: absolute;
   top: 0;
   width: 50%;
-  height: 100%;
+  height: 130%;
   z-index: 5;
   cursor: grab;
   touch-action: none;
@@ -868,7 +869,6 @@ section {
   justify-content: center;
   padding: 30px;
   background: #fffaf3;
-  border: 4px solid #fbcad1;
 }
 
 /* Animasi Buka */
