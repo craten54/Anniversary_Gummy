@@ -1,16 +1,402 @@
 ---
-
+const title = "Our 1st Anniversary";
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <audio id="sfx-open" src="/audio/surat.mp3" preload="auto"></audio>
+    <audio id="bgm-main" src="/audio/bgm.mp3" preload="auto" loop></audio>
+    <div id="sparkle-container"></div>
+
+    <section id="opening-letter" class="opening-letter">
+      <div class="letter-wrapper">
+        <p class="opening-text">
+          Ini bukan sekadar halaman. Ini perasaan yang aku simpan pelan-pelan.
+        </p>
+        <div class="envelope">
+          <div class="envelope-flap" id="letter-cover">
+            <span class="handle">🎀</span>
+          </div>
+          <div class="envelope-body"></div>
+        </div>
+        <p class="hint">
+          Geser 🎀 ke atas untuk membuka surat ini
+        </p>
+      </div>
+    </section>
+
+    <section class="hero fade-section">
+      <img src="/images/character.png" alt="Character" class="character" />
+      <h1 class="title">Dear Gummy 🤍</h1>
+      <p class="subtitle">
+        Terima kasih sudah menjadi bagian paling manis dalam hidupku.
+      </p>
+    </section>
+
+    <section class="story fade-section">
+      <h2>Our Story</h2>
+      <p>
+        Memulai karir dari TikTok bermodalkan HP sampai di titik saat ini yang udah di YouTube road to 5K subs di tahun ini, punya 3Ponketeer, dan punya kita gummies.
+      </p>
+    </section>
+
+    <section class="timeline fade-section">
+      <h2>Our Journey</h2>
+      <div class="timeline-container">
+        <div class="timeline-item">
+          <span class="dot"></span>
+          <div class="content">
+            <h3>Kiyomi Gummy lahir meninggalkan sosok GummyNeechan</h3>
+            <p>Awal kariermu sampe punya premade dan terus memutuskan all in YouTube dan keluar dari zona nyaman. Aku salut liat kamu melakukan hal itu.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="dot"></span>
+          <div class="content">
+            <h3>First Time We Met</h3>
+            <p>Dari timeline X ada character reveal, dari pengikut TikTok, dari info teman, terus mencoba nonton sosok character bernama Kiyomi Gummy.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="dot"></span>
+          <div class="content">
+            <h3>The Day We Became Gummies</h3>
+            <p>Hari di mana kata "Gummies” mulai punya suatu makna yang menurutku punya banyak nilai yang gabisa untuk ditulis satu per satu.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="dot"></span>
+          <div class="content">
+            <h3>Memories We Built</h3>
+            <p>Canda, tawa, sedih, senang, marah, badmood, kesel, bahagia, dan momen-momen kecil yang berharga.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="dot"></span>
+          <div class="content">
+            <h3>Our 1st Anniversary</h3>
+            <p>Satu tahun telah dilalui bersama dan aku sebagai Gummies berterima kasih serta mohon bantuannya untuk tahun depan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="special-message-section fade-section">
+      <h2 class="special-title">Special Message</h2>
+
+      <div class="trifold-container">
+        <div class="trifold-content">
+          <div class="photo-center">
+            <img src="/images/3pon.png" alt="Special Memory" />
+          </div>
+        </div>
+
+        <div class="flap flap-left" id="flap-left">
+          <div class="flap-front">
+            <span class="door">OPEN</span>
+          </div>
+          <div class="flap-back">
+            <div class="handwritten-text">
+              <p>Selamat atas debut 2.0-nya, gummy!!!</p>
+              <p>Akhirnya sampai di titik ini—setelah banyak hal sulit yang kamu lewati dengan sabar. Ke depannya mungkin nggak kalah sulit, tapi semoga kamu selalu punya cukup semangat untuk bertahan dan terus melangkah ya, Aamiiin🤲</p>
+              <p>Jangan lupa buat tetap nikmatin setiap prosesnya, karena itu yang paling penting📝</p>
+              <p>Sampai suatu hari nanti, kamu bisa merasa cukup sama diri sendiri dan benar-benar bahagia. Semoga kebahagiaan juga selalu menemukanmu, di mana pun itu, gummm🤍</p>
+              <p>Wishing you all the best, always.</p>
+              <p>Terima kasih udah jadi teman yang selalu bisa ketawain hal-hal kecil 🤏</p>
+              <p>Keep that smile—until you shine bright 🌟🌻✨💫</p>
+              <span class="authortext">- Tabi Noji </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flap flap-right" id="flap-right">
+          <div class="flap-front">
+            <span class="door">ME</span>
+          </div>
+          <div class="flap-back">
+            <div class="handwritten-text">
+              <p>Tes</p>
+              <p>TES</p>
+              <span class="authortext">- Cecilia Hanarisu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pull-ribbon-section fade-section">
+      <h2 style="margin-bottom: 40px;">Messages from Gummies</h2>
+      <div class="pull-container">
+        <div id="ribbon-track" class="ribbon-track">
+          
+          <div id="pull-handle" class="pull-handle">
+            <span class="pull-label">PULL ME 🎀</span>
+          </div>
+
+          <div class="letters-row">
+            <div class="letter-card">
+              <div class="gummy-knot">✨</div>
+              <p>Selamat ulang tahun Pink🍭✨</p>
+              <p>Perjalanan ngeWayang lu emang berat, tapi inget, "semua VTuber besar juga pernah mulai dari nol". Terus konsisten, terus belajar, dan jangan berhenti percaya sama diri sendiri.</p>
+              <p>Kalo lagi down, ingat alasan gummy mulai mau jadi Vtuber ya. Pelan-pelan aja, yang penting jalan terus.</p>
+              <p>Teruslah bersinar dengan kepribadianmu sendiri, karena tanpa kamu sadari, kamu alasan piwer piwermu tersenyum ceria.</p>
+              <p>Gelooookk ✨</p>
+              <span class="author">- Dari Fans Pink Nomer 1</span>
+            </div>
+            
+            <div class="letter-card">
+              <div class="gummy-knot">🎨</div>
+              <p>Happy aniv kak gummy, pertama kali kak ketemu kak gummy aja masih inget banget kita mutualan di x pas kak gummy ketik pengen temenan di x, malah saling follow trs malah kak gummy yang sering comish ke aku. once again, thankyu juga udah mau komis banyak ke aku kak gummy. and anyway aku suka banget sama model 2.0 kak gummy model nya kayak princes yang nge jaga dunia permen . inget banget model kak gummy yang masih senyum roblox, trs versi 1.0 nya skrng versi mama natch. intinya semnagat terus kak gummy!</p>
+              <span class="author">- Dari Uto</span>
+            </div>
+            
+            <div class="letter-card">
+              <div class="gummy-knot">🎁</div>
+              <p>Pertama kali tau gummy d kasi tau uto, habis itu kenal dan ternyata gummy orangnya baik dan seru, gummy hebat uda berjuang sampai hari ini, kedepannya dengan model baru ini semoga bisa lebih enjoy dan semangat di vtubing, modelnya lucu banget btw. </p>
+              <p>yang paling penting semoga sehat dan bahagia selalu ya!</p>
+              <span class="author">- Dari Jona</span>
+            </div>
+
+            <div class="letter-card">
+              <div class="gummy-knot">🐊</div>
+              <p>Gummy, congrats debut 2.0 nyaaa!!!</p>
+              <p> Aku harap buat kedepannya Gummy makin semangat dan selalu ceria dalam berkonten, dikelilingi gummies yang suportif, lalu yang terpenting, Gummy tetap menjadi my my mine agu yang sama seperti dulu 🫦🌹</p>
+              <span class="author">- Dari Fazaaaa</span>
+            </div>
+            
+            <div class="letter-card">
+              <div class="gummy-knot">🧀</div>
+              <p>Happy anniv gummy, semoga di tahun depan semakin pon.. nya berkurang, makin banyak yg suka gummy, semangat terus gummyy</p>
+              <p> Mungkin aku jarang nonton gummy skrg, karena lebih sibuk daripada dulu, hehe, tp setiap stream gummy tuh seru kok, vibenya selalu ceria, agak pon dikit, tp lucu. Happy Anniv Gummy 💕</p>
+              <span class="author">- Dari Juli</span>
+            </div>
+
+            <div class="letter-card">
+              <div class="gummy-knot">🖼️</div>
+              <p> Untuk gummy, tolong kalo lagi puasa jangan sering-sering stream di tengah malam ya.. soalnya pasti capek. Dan untuk kedepannya, kalo lagi gk enak badan jangan lupa untuk istirahat aja daripada di paksa stream. Kami sebagai viewer ingin yg terbaik buat kamu jadi jangan sampe kecapean ataupun sakit ya✨</p>
+              <span class="author">- Dari Machio</span>
+            </div>
+
+            <div class="letter-card">
+              <div class="gummy-knot">👩🏻‍⚖️</div>
+              <p>Semoga Gummy Kedepannya Selalu Disayang Sama Komunitas, Tetap Solid, Tetap Cantik dan Imut!!</p>
+              <span class="author">- Dari Bobochan</span>
+            </div>
+
+            <div class="letter-card">
+              <div class="gummy-knot">🌹</div>
+              <p>gummy, gummy gummy yang segemoy gummy bear, semangat 2.0nya!</p>
+              <span class="author">- Dari Amaranth[陳]</span>
+            </div>
+            
+            <div class="letter-card">
+              <div class="gummy-knot">🛌</div>
+              <p>Happy anniversary Gummy maid UwU. Anjay, udah setahun ya padahal baru kemarin ketemuan.</p>
+              <p>Apa ya... Sebenarnya banyak kenangan dan juga momen yang indah layaknya hidangan sederhana yang terlihat mewah.</p>
+              <p>Harapan dan keinginan? Moga aja petualangan dan perjalanan nya makin menarik dan unik, serta jangan keseringan pon ya. 😅☝</p>
+              <span class="author">- Dari MSL</span>
+            </div>
+            
+            <div class="letter-card">
+              <div class="gummy-knot">🍼</div>
+              <p>Aku belom lama jadi viewer Gummy, tapi makasih banyak ya!! Makasih udah menghibur hari-hariku!!</p>
+              <span class="author">- Dari Molen</span>
+            </div>
+            
+            <div class="letter-card">
+              <div class="gummy-knot">🎮</div>
+              <p>Haloo gummoyyy Happy Anniversary yaa , been a long journeyy and im glad to be part of it! Semoga kedepannya semua goals dan harapanmu terwujudkan yaa</p>
+              <span class="author">- Dari T-Sensei</span>
+            </div>
+            
+            <div class="letter-card">
+              <div class="gummy-knot">🍟</div>
+              <p>Gummyy. . . Selamat yaaa atas 1st anniversary kamu sama model 2.0 kamu itu lucu kaliii~</p>
+              <p>Semoga dengan debutnya 2.0, kamu menjadi vtuber yang lebih suksess lagii dan komunitas yang kamu buat dari 0 selalu mendukung kamu. Aku akan selalu menunggu karoke dangdutnya, kalo bisa 1x sebulan 🥺🥺. Sekali lagi selamat dan suksesss yaa buat kamuu. . .</p>
+              <span class="author">- Dari T-Sensei</span>
+            </div>
+            
+            <div class="letter-card">
+              <div class="gummy-knot">💩</div>
+              <p>Happy Anniversary Gummy 🥳</p>
+              <p>Mungkin 2025 akan berakhir tapi tahun kamu masih panjang dan masih banyak hal yang bisa kamu lakukan di anniv-anniv selanjutnya ~</p>
+              <p>Selamat juga atas model 2.0nya yaa ~ para Gummies pasti klepek-klepek liat model barunya yang lucu kawaii ini</p>
+              <p>Tetep semangat dan semoga di tahun depan bisa sukses dan bisa dapetin semua yang dipengen ~</p>
+              <p>Sekali lagi, Happy Anniversary Gummy 🎉</p>
+              <span class="author">- Dari Poii</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-gallery fade-section">
+      <h2 class="gallery-title">12 Months of Us</h2>
+      <p class="gallery-subtitle">Setiap bulan punya ceritanya sendiri 🌸</p>
+      
+      <div class="gallery-grid">
+        <div class="photo-card" style="--rotation: -2deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month0.png" alt="Month 1" />
+            </div>
+            <div class="caption">Bulan 00: Awal segalanya</div>
+          </div>
+        </div>
+
+        <div class="photo-card" style="--rotation: 0deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month1.png" alt="Month 2" />
+            </div>
+            <div class="caption">Bulan 01: Collab Pertama</div>
+          </div>
+        </div>
+        
+        <div class="photo-card" style="--rotation: 2deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month2.png" alt="Month 3" />
+            </div>
+            <div class="caption">Bulan 02: Open Membership</div>
+          </div>
+        </div>
+        
+        <div class="photo-card" style="--rotation: -2deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month3.png" alt="Month 4" />
+            </div>
+            <div class="caption">Bulan 03: Vertical Stream</div>
+          </div>
+        </div>
+        
+        <div class="photo-card" style="--rotation: 0deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month4.png" alt="Month 5" />
+            </div>
+            <div class="caption">Bulan 04: Announcement</div>
+          </div>
+        </div>
+        
+        <div class="photo-card" style="--rotation: 2deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month5.png" alt="Month 6" />
+            </div>
+            <div class="caption">Bulan 05: Unboxing Merch</div>
+          </div>
+        </div>
+        
+        <div class="photo-card" style="--rotation: -2deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month6.png" alt="Month 7" />
+            </div>
+            <div class="caption">Bulan 06: Giveaway</div>
+          </div>
+        </div>
+        
+        <div class="photo-card" style="--rotation: 0deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month7.png" alt="Month 8" />
+            </div>
+            <div class="caption">Bulan 07: Main Ditemani Curut</div>
+          </div>
+        </div>
+        
+        <div class="photo-card" style="--rotation: 2deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month8.1.png" alt="Month 9" />
+            </div>
+            <div class="caption">Bulan 08: PonKeteer Bersatu</div>
+          </div>
+        </div>
+        
+        <div class="photo-card" style="--rotation: -2deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month8.png" alt="Month 10" />
+            </div>
+            <div class="caption">Bulan 08: Birthday Stream</div>
+          </div>
+        </div>
+        
+        <div class="photo-card" style="--rotation: 0deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month9.png" alt="Month 11" />
+            </div>
+            <div class="caption">Bulan 09: Main bareng Kaela</div>
+          </div>
+        </div>
+        
+        <div class="photo-card" style="--rotation: 2deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month10.png" alt="Month 12" />
+            </div>
+            <div class="caption">Bulan 10: Gummidnigh</div>
+          </div>
+        </div>
+        
+        <div class="photo-card" style="--rotation: -2deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month11.png" alt="Month 13" />
+            </div>
+            <div class="caption">Bulan 11: Agak Lama Stream</div>
+          </div>
+        </div>
+        
+        <div class="photo-card" style="--rotation: 0deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month12.png" alt="Month 14" />
+            </div>
+            <div class="caption">Bulan 12: Sayonara Gummy 1.0</div>
+          </div>
+        </div>
+        
+        <div class="photo-card" style="--rotation: 2deg;">
+          <div class="polaroid">
+            <div class="image-frame">
+              <img src="/images/month12.1.png" alt="Month 15" />
+            </div>
+            <div class="caption">Bulan 12: Gummy 2.0</div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="closing fade-section">
+      <p>
+        Mencapai di titik ini bukanlah hal yang mudah. Banyak hal yang dipertaruhkan dan diperjuangkan, tapi sosok yang bernama Kiyomi Gummy berhasil melakukan itu semua.
+      </p>
+      <p>
+        Semoga ini bukan akhir cerita kita, tapi awal dari banyak halaman indah berikutnya.
+      </p>
+      <p>
+        Terimakasih Gummy sudah mempercayai Gummies sampai detik ini.
+      </p>
+    </section>
+
+    <script type="module">
+      import "../scripts/scroll.js";
+    </script>
+  </body>
 </html>
