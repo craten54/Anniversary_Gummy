@@ -907,7 +907,7 @@ section {
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 30px;
   background: #fffaf3;
   border: 4px solid #fbcad1;
@@ -938,9 +938,10 @@ section {
 
   width: 100%;
   /* Mencegah teks tumpah keluar kotak pintu */
-  max-height: 90%;
+  max-height: 100%;
   overflow-y: auto;
-  padding-right: 5px;
+  padding: 10px;
+  scrollbar-width: thin;
 }
 
 .author {
