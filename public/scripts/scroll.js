@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
           document.body.style.overflow = "auto";
           
           if (bgmMain) {
-            bgmMain.volume = 0.3;
+            bgmMain.volume = 0.1;
             bgmMain.play().catch(err => {
               console.log("Autoplay dicegah browser, perlu interaksi user.");
             });
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (track) {
     let isDraggingRibbon = false;
     let startX;
-    let currentTranslate = 0; 
+    let currentTranslate = 0;
 
     track.style.transform = `translateX(0px)`;
 
