@@ -583,6 +583,26 @@ section {
   }
 }
 
+@media (max-width: 768px) {
+  .trifold-container {
+    aspect-ratio: 1 / 1.2;
+    /* Di HP buat bentuknya lebih tegak (portrait) */
+    margin: 20px auto;
+  }
+
+  .flap-front,
+  .flap-back {
+    padding: 15px;
+    /* Kurangi padding agar area teks lebih luas */
+  }
+
+  .door {
+    font-size: 1.5rem;
+    /* Perkecil tombol OPEN agar tidak menutupi pintu */
+    padding: 8px 20px;
+  }
+}
+
 .book-viewport {
   width: 95%;
   max-width: 900px;
@@ -772,12 +792,16 @@ section {
 
 .trifold-container {
   position: relative;
-  width: 100%;
+  width: 95%;
+  /* Fleksibel mengikuti lebar layar */
   max-width: 850px;
-  height: 500px;
+  /* Batas maksimal di layar besar (2K/FHD) */
   margin: 50px auto;
-  /* Perspective memberikan efek kedalaman agar ayunan terlihat 3D */
   perspective: 2500px;
+
+  /* KUNCI: Menjaga bentuk kotak tetap proporsional tanpa tinggi kaku */
+  aspect-ratio: 17 / 10;
+  height: auto;
 }
 
 /* Konten Tengah */
@@ -790,11 +814,27 @@ section {
   justify-content: center;
   align-items: center;
   z-index: 1;
+  overflow: hidden;
+  /* Mencegah foto keluar jalur */
+}
+
+.photo-center {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .photo-center img {
-  height: 470px;
+  /* Foto akan selalu maksimal setinggi container (FHD/2K menyesuaikan) */
+  max-height: 90%;
+  max-width: 90%;
+  width: auto;
+  height: auto;
   object-fit: contain;
+  border-radius: 10px;
+  /* Opsional: sedikit melengkung agar manis */
 }
 
 /* Dasar Pintu (Flap) */
@@ -885,10 +925,20 @@ section {
 /* Handwritten Text di dalam pintu */
 .handwritten-text {
   font-family: 'Dancing Script', cursive;
-  font-size: 1.45rem;
+  /* Font size otomatis: Min 0.9rem, ideal 2vw, Max 1.4rem */
+  font-size: clamp(0.9rem, 1.8vw, 1.4rem);
   color: #4d2d18;
   text-align: justify;
-  line-height: 0.75;
+
+  /* UBAH: Jangan gunakan line-height 0.75 (terlalu rapat), 
+      gunakan nilai normal agar tidak balapan saat teks membungkus */
+  line-height: 1.3;
+
+  width: 100%;
+  /* Mencegah teks tumpah keluar kotak pintu */
+  max-height: 80%;
+  overflow-y: auto;
+  padding-right: 5px;
 }
 
 .author {
