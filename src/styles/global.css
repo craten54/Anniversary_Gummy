@@ -4,20 +4,9 @@ a, button, .pull-handle,
 .letter-row, .ribbon-track,
 .flap-back, .flap-front,
 .flap-left, .flap-right,
-.door, .handwritten-text {
+.door, .handwritten-text{
   /* Kursor Pink Heart */
   cursor: url('/images/gummy_cursor2.png')16 16, pointer !important;
-}
-
-section {
-  padding: 80px 20px;
-  width: 100%;
-  box-sizing: border-box;
-  /* KUNCI: Biarkan user scroll ke samping jika konten terlalu lebar */
-  overflow-x: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 html,
@@ -211,6 +200,30 @@ section {
   }
 }
 
+/* Chrome, Edge, Brave */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
 .fade-section {
   opacity: 0;
   transform: translateY(50px);
@@ -355,9 +368,9 @@ section {
 .pull-ribbon-section {
   width: 100%;
   overflow: hidden;
-  padding: 200px 0;
+  padding: 300px 0;
   position: relative;
-  min-height: 610px;
+  min-height: 650px;
 }
 
 .pull-container {
@@ -570,26 +583,6 @@ section {
   }
 }
 
-@media (max-width: 768px) {
-  .trifold-container {
-    aspect-ratio: 1 / 1.2;
-    /* Di HP buat bentuknya lebih tegak (portrait) */
-    margin: 20px auto;
-  }
-
-  .flap-front,
-  .flap-back {
-    padding: 15px;
-    /* Kurangi padding agar area teks lebih luas */
-  }
-
-  .door {
-    font-size: 1.5rem;
-    /* Perkecil tombol OPEN agar tidak menutupi pintu */
-    padding: 8px 20px;
-  }
-}
-
 .book-viewport {
   width: 95%;
   max-width: 900px;
@@ -779,29 +772,18 @@ section {
 
 .trifold-container {
   position: relative;
-  width: 95%;
-  /* Fleksibel mengikuti lebar layar */
+  width: 100%;
   max-width: 850px;
-  min-width: 320px;
-  /* Batas maksimal di layar besar (2K/FHD) */
-  margin: 50px 0;
+  height: 500px;
+  margin: 50px auto;
+  /* Perspective memberikan efek kedalaman agar ayunan terlihat 3D */
   perspective: 2500px;
-
-  /* KUNCI: Menjaga bentuk kotak tetap proporsional tanpa tinggi kaku */
-  aspect-ratio: 17 / 10;
-  height: auto;
-  left: 0;
-  transform: translateX(0);
 }
 
 /* Konten Tengah */
 .trifold-content {
   position: absolute;
   inset: 0;
-  /* Mengunci ke semua sisi container */
-  width: 100%;
-  height: 100%;
-  /* Mengikuti tinggi aspect-ratio container */
   background: #fffaf3;
   border: 4px solid #fbcad1;
   display: flex;
@@ -810,23 +792,9 @@ section {
   z-index: 1;
 }
 
-.photo-center {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .photo-center img {
-  /* Foto akan selalu maksimal setinggi container (FHD/2K menyesuaikan) */
-  max-height: 90%;
-  max-width: 90%;
-  width: auto;
-  height: auto;
+  height: 470px;
   object-fit: contain;
-  border-radius: 10px;
-  /* Opsional: sedikit melengkung agar manis */
 }
 
 /* Dasar Pintu (Flap) */
@@ -897,7 +865,7 @@ section {
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 30px;
   background: #fffaf3;
   border: 4px solid #fbcad1;
@@ -917,21 +885,10 @@ section {
 /* Handwritten Text di dalam pintu */
 .handwritten-text {
   font-family: 'Dancing Script', cursive;
-  /* Font size otomatis: Min 0.9rem, ideal 2vw, Max 1.4rem */
-  font-size: clamp(0.9rem, 1.8vw, 1.4rem);
+  font-size: 1.45rem;
   color: #4d2d18;
   text-align: justify;
-
-  /* UBAH: Jangan gunakan line-height 0.75 (terlalu rapat),
-      gunakan nilai normal agar tidak balapan saat teks membungkus */
-  line-height: 1.3;
-
-  width: 100%;
-  /* Mencegah teks tumpah keluar kotak pintu */
-  max-height: 100vh;
-  overflow-y: auto;
-  padding: 10px;
-  scrollbar-width: thin;
+  line-height: 0.75;
 }
 
 .author {
