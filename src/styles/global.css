@@ -368,9 +368,9 @@ section {
 .pull-ribbon-section {
   width: 100%;
   overflow: hidden;
-  padding: 300px 0;
+  padding: 200px 0;
   position: relative;
-  min-height: 650px;
+  min-height: 610px;
 }
 
 .pull-container {
@@ -936,7 +936,7 @@ section {
 
   width: 100%;
   /* Mencegah teks tumpah keluar kotak pintu */
-  max-height: 80%;
+  max-height: 90%;
   overflow-y: auto;
   padding-right: 5px;
 }
