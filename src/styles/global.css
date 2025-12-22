@@ -1,0 +1,948 @@
+/* KURSOR SAAT MENYENTUH TOMBOL ATAU ELEMEN INTERAKTIF */
+a, button, .pull-handle,
+.envelope-flap, .letter-card,
+.letter-row, .ribbon-track {
+  /* Kursor Pink Heart */
+  cursor: url('/images/gummy_cursor2.png')16 16, pointer !important;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  cursor: url('/images/gummy_cursor1.png')16 16, auto;
+}
+
+/* scroll akan dibuka lewat JS */
+body.lock-scroll {
+  overflow: hidden;
+}
+
+body.unlock-scroll {
+  overflow-y: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+    /* Latar belakang kotak-kotak cokelat (Chocolate/Wafer Pattern) */
+    background-color: #fdf6ec;
+    /* Warna dasar krem lembut */
+    background-image:
+      linear-gradient(90deg, rgba(139, 69, 19, 0.05) 50%, transparent 50%),
+      linear-gradient(rgba(139, 69, 19, 0.05) 50%, transparent 50%);
+    background-size: 60px 60px;
+    /* Ukuran kotak */
+  
+    /* Efek bayangan halus di tepi kotak agar terlihat seperti tekstur kue/cokelat */
+    box-shadow: inset 0 0 100px rgba(139, 69, 19, 0.1);
+  
+    color: #333;
+    overscroll-behavior: none;
+    scrollbar-gutter: stable;
+}
+
+section {
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  background: transparent;
+  backdrop-filter: none;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.character {
+  width: 280px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-top: 20px;
+}
+
+.subtitle {
+  max-width: 400px;
+  opacity: 0.8;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TIMELINE */
+
+.timeline h2 {
+  margin-bottom: 40px;
+}
+
+.timeline-container {
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #f2b8c6;
+  border-radius: 10px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.timeline-item .dot {
+  position: absolute;
+  left: -2px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background: #f58ca3;
+  border-radius: 50%;
+}
+
+.timeline-item .content {
+  background: white;
+  padding: 16px 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-item h3 {
+  margin: 0 0 6px;
+}
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SPARKLE BACKGROUND */
+#sparkle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+  inset: 0;
+}
+
+.sparkle {
+  position: absolute;
+  font-size: 12px;
+  opacity: 0.8;
+  animation: fall linear infinite;
+  top: -20px;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(110vh);
+    opacity: 1;
+  }
+}
+
+/* Chrome, Edge, Brave */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* OPENING LETTER FULLSCREEN */
+.envelope {
+  position: relative;
+  width: 320px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: #ffe6ee;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top center;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 12px;
+  cursor: grab;
+  touch-action: none;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* BADAN AMPL0P */
+.envelope-body {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 170px;
+  background: #fffaf3;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+
+.envelope-flap .handle {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+  opacity: 0.75;
+}
+
+.envelope-flap.open {
+  transform: rotateX(180deg);
+}
+
+.opening-letter {
+  position: fixed;
+  inset: 0;
+  background-color: #fdf6ec;
+  background-image:
+    linear-gradient(90deg, rgba(139, 69, 19, 0.05) 50%, transparent 50%),
+    linear-gradient(rgba(139, 69, 19, 0.05) 50%, transparent 50%);
+  background-size: 60px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: transform 2s cubic-bezier(0.85, 0, 0.15, 1);
+  will-change: transform;
+}
+
+.opening-text {
+  max-width: 280px;
+  margin: 0 auto 8px;
+  font-size: 0.95rem;
+  color: #713229;
+  opacity: 0.9;
+}
+
+/* HANDLE */
+.handle {
+  font-size: 1.4rem;
+  opacity: 0.7;
+}
+
+.letter-cover:active {
+  cursor: grabbing;
+}
+
+.letter-wrapper {
+  width: 320px;
+  text-align: center;
+}
+
+/* HANDLE PANAH */
+.letter-cover .handle {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+  opacity: 0.75;
+  z-index: 7;
+}
+
+/* ANIMASI SAAT DIBUKA */
+.letter-cover.open {
+  transform: translateY(-115%);
+}
+
+.letter-cover.open .flap {
+  transform: rotateX(180deg);
+}
+
+/* PETUNJUK (SELALU KELIHATAN DARI AWAL) */
+.hint {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #713229;
+  opacity: 0.85;
+}
+
+/* EXIT SCREEN */
+.opening-letter.hide {
+  transform: translateY(-100%);
+  transition: transform 1s ease;
+  pointer-events: none;
+}
+
+/* ... kode sebelumnya tetap sama ... */
+
+/* STYLING UNTUK PITA PENARIK */
+.pull-ribbon-section {
+  width: 100%;
+  overflow: hidden;
+  padding: 300px 0;
+  position: relative;
+  min-height: 650px;
+}
+
+.pull-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+}
+
+.ribbon-track {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to bottom,
+      #f2b8c6 0%,
+      #ffffff 50%,
+      #f2b8c6 100%);
+  height: 16px;
+  position: absolute;
+  /* KUNCI: Titik mulai track tepat di tengah layar */
+  left: 50%;
+  padding: 0;
+  border-radius: 20px;
+  cursor: grab;
+  touch-action: none;
+  white-space: nowrap;
+  will-change: transform;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pull-handle {
+  position: absolute;
+  /* HANDLE MENEMPEL: Geser ke kiri agar bagian bulat kanannya menutup ujung tali */
+  left: -60px;
+  background: #f58ca3;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(245, 140, 163, 0.4);
+  z-index: 10;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.letters-row {
+  display: flex;
+  gap: 700px;
+  /* Jarak antar surat */
+  /* Jarak surat pertama: diatur agar surat #1 pas di bawah handle saat awal */
+  padding-left: 250px;
+}
+
+.letter-card {
+  min-width: 350px;
+  max-width: 400px;
+  width: fit-content;
+  height: fit-content;
+  min-height: 100px;
+  background: #FBCAD1;
+  padding: 25px;
+  border-radius: 18px;
+  margin-top: 450px;
+  /* Jarak gantung di bawah pita */
+  position: relative;
+  box-shadow: 0 10px 25px #713229;
+  white-space: normal;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1.5;
+    /* Memberi ruang antar baris agar nyaman dibaca */
+}
+
+.letter-card::before {
+  content: "";
+  position: absolute;
+  top: -115px;
+  left: 50%;
+  width: 3px;
+  height: 115px;
+  background: repeating-linear-gradient(to bottom, #f2b8c6, #f2b8c6 10px, #fff 10px, #fff 20px);
+}
+
+.gummy-knot {
+  position: absolute;
+  top: -135px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+}
+
+.author {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.special-message-section {
+  padding: 100px 20px;
+  background: transparent;
+}
+
+.special-title {
+  margin-bottom: 50px;
+  font-family: 'Poppins', sans-serif;
+  color: #4d2d18;
+}
+
+.message-book-container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fffaf3;
+  /* Warna kertas kertas lama */
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+  border: 8px solid #fbcad1;
+  /* Bingkai pink sesuai tema */
+}
+
+.book-page {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container Buku Terbuka */
+.book-spread {
+  position: relative;
+  display: flex;
+  width: 100%;
+  background: #fffaf3;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  min-height: 500px;
+  border: 4px solid #713229;
+}
+
+/* Kita tambahkan satu garis tipis tepat di tengah agar terlihat seperti lipatan kertas */
+.book-spread:not(.cover-only)::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(52, 22, 32, 0.3);
+  z-index: 10;
+  transform: translateX(-50%);
+}
+
+/* Garis pembatas buku di tengah */
+.book-spine {
+  width: 2px;
+  background: rgba(77, 45, 24, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Sisi Video */
+.video-wrapper {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background: #000;
+}
+
+.video-wrapper video {
+  width: 100%;
+  display: block;
+}
+
+/* Sisi Tulisan */
+.handwritten-text {
+  text-align: left;
+  font-family: 'Dancing Script', cursive;
+  /* Gunakan font tulisan tangan jika ada */
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #4d2d18;
+}
+
+.signature {
+  text-align: right;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+/* Responsive: Jadi tumpuk atas bawah di HP */
+@media (max-width: 768px) {
+  .message-book-container {
+    flex-direction: column;
+  }
+
+  .book-spine {
+    width: 100%;
+    height: 2px;
+  }
+}
+
+.book-viewport {
+  width: 95%;
+  max-width: 900px;
+  /* Lebar total buku saat terbuka */
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.book-pages-track {
+  display: flex;
+  will-change: transform;
+}
+
+.book-page {
+  min-width: 100%;
+  flex-shrink: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.book-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.page-content {
+  flex: 1;
+  padding: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Container untuk Video di Kiri & Teks di Kanan */
+.spread-container {
+  display: flex;
+  background: #fffaf3;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  min-height: 450px;
+}
+
+.left-page::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  /* Sedikit lebih lebar agar gradasi lebih smooth */
+  height: 100%;
+  /* Gradasi: Dari transparan di kiri, ke gelap di kanan (pusat lipatan) */
+  background: linear-gradient(to right, transparent, rgba(52, 22, 32, 0.2));
+  pointer-events: none;
+}
+
+.right-page::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  /* Gradasi: Dari gelap di kiri (pusat lipatan), ke transparan di kanan */
+  background: linear-gradient(to left, transparent, rgba(52, 22, 32, 0.2));
+  pointer-events: none;
+}
+
+.left-side,
+.right-side {
+  flex: 1;
+  padding: 30px;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Efek Lipatan Buku di Tengah */
+.left-side::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.05));
+}
+
+.cover-only .page-content {
+  /* Memberikan sedikit efek lengkungan di sisi luar cover */
+  border-radius: 15px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.cover-front,
+.cover-back {
+  background: #fbcad1;
+  color: #4d2d18;
+  align-items: center;
+  text-align: center;
+}
+
+.cover-img {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.video-box video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* CONTAINER UTAMA TV */
+
+/* ANTENA TV */
+
+/* BODI TV */
+
+/* AREA LAYAR VIDEO */
+
+/* TOMBOL TV DI SAMPING */
+
+/* ANTENA & KAKI: Tetap simple */
+
+.gallery-grid {
+  display: grid;
+  /* Membuat 3 kolom yang sama besar */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.photo-card {
+  perspective: 1000px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: rotate(var(--rotation));
+}
+
+.photo-card:hover {
+  transform: rotate(0deg) scale(1.05);
+  z-index: 20;
+}
+
+.polaroid {
+  background: white;
+  padding: 15px;
+  padding-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(113, 50, 41, 0.15);
+  border-radius: 4px;
+}
+
+.image-frame {
+  width: 100%;
+  /* Memaksa bingkai foto menjadi 16:9 */
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #eee;
+  border-radius: 2px;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroid .caption {
+  margin-top: 15px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.1rem;
+  color: #4d2d18;
+}
+
+/* RESPONSIVE: Di HP berubah jadi 1 kolom saja agar foto tetap terlihat lebar */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.trifold-container {
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  height: 500px;
+  margin: 50px auto;
+  /* Perspective memberikan efek kedalaman agar ayunan terlihat 3D */
+  perspective: 2500px;
+}
+
+/* Konten Tengah */
+.trifold-content {
+  position: absolute;
+  inset: 0;
+  background: #fffaf3;
+  border: 4px solid #fbcad1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.photo-center img {
+  height: 470px;
+  object-fit: contain;
+}
+
+/* Dasar Pintu (Flap) */
+.flap {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 5;
+  cursor: grab;
+  touch-action: none;
+  /* Agar sisi depan dan belakang pintu bisa terlihat saat berputar */
+  transform-style: preserve-3d;
+  /* Transisi halus saat pintu dilepas */
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flap-left {
+  left: 0;
+  /* KUNCI: Engsel di sisi paling kiri */
+  transform-origin: left center;
+  background: #fbcad1;
+  border: 2px solid #713229;
+}
+
+.flap-right {
+  right: 0;
+  /* KUNCI: Engsel di sisi paling kanan */
+  transform-origin: right center;
+  background: #fbcad1;
+  border: 2px solid #713229;
+}
+
+/* Sisi Depan & Belakang Pintu */
+.flap-front,
+.flap-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.flap-front {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  /* Balikkan 180 derajat agar teks tidak terbalik saat pintu terbuka */
+  /* transform: rotateY(180deg); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  background: #fbcad1;
+  border: 4px solid #fbcad1;
+  font-family: 'Dancing Script', cursive;
+}
+
+.flap-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  /* Balikkan 180 derajat agar teks tidak terbalik saat pintu terbuka */
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  background: #fffaf3;
+  border: 4px solid #fbcad1;
+}
+
+/* Animasi Buka */
+.flap-left.is-open {
+  transform: rotateY(-160deg);
+  /* Buka ke kiri */
+}
+
+.flap-right.is-open {
+  transform: rotateY(160deg);
+  /* Buka ke kanan */
+}
+
+/* Handwritten Text di dalam pintu */
+.handwritten-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  color: #4d2d18;
+  text-align: left;
+  line-height: 1.15;
+}
+
+.author {
+  display: block;
+  margin-top: 15px;
+  text-align: right;
+  font-weight: bold;
+}
+.authortext {
+  display: block;
+  font-size: 1.2rem;
+  opacity: 0.6;
+  font-style: italic;
+  text-align: right;
+  font-weight: bold;
+}
+
+.flap:active {
+  cursor: grabbing;
+}
+
+.door {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  /* Ukuran teks OPEN */
+  color: #713229;
+  font-weight: bold;
+
+  /* Membuat teks terlihat seperti ukiran atau plat pintu */
+  background: rgba(255, 255, 255, 0.4);
+  padding: 10px 30px;
+  border: 3px solid #713229;
+  border-radius: 15px;
+
+  /* Efek bayangan agar teks menonjol di depan pintu */
+  box-shadow: 4px 4px 0px rgba(113, 50, 41, 0.2);
+
+  /* Animasi agar user tahu ini bisa ditarik */
+  animation: bounceHint 2s infinite;
+  user-select: none;
+}
+
+@keyframes bounceHint {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Efek saat pintu di-hover (opsional) */
+.door {
+  background: #713229;
+  color: #fff;
+  border-color: #713229;
+}
