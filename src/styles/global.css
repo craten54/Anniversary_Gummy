@@ -784,7 +784,7 @@ section {
 .trifold-content {
   position: absolute;
   inset: 0;
-  height: 130%;
+  height: 200%;
   background: #fffaf3;
   border: 2px solid #713229;
   display: flex;
@@ -794,7 +794,7 @@ section {
 }
 
 .photo-center img {
-  height: 550px;
+  height: 600px;
   object-fit: contain;
 }
 
@@ -803,7 +803,7 @@ section {
   position: absolute;
   top: 0;
   width: 50%;
-  height: 130%;
+  height: 200%;
   z-index: 5;
   cursor: grab;
   touch-action: none;
