@@ -1,7 +1,10 @@
 /* KURSOR SAAT MENYENTUH TOMBOL ATAU ELEMEN INTERAKTIF */
 a, button, .pull-handle,
 .envelope-flap, .letter-card,
-.letter-row, .ribbon-track {
+.letter-row, .ribbon-track,
+.flap-back, .flap-front,
+.flap-left, .flap-right,
+.door, .handwritten-text {
   /* Kursor Pink Heart */
   cursor: url('/images/gummy_cursor2.png')16 16, pointer !important;
 }
@@ -882,10 +885,10 @@ section {
 /* Handwritten Text di dalam pintu */
 .handwritten-text {
   font-family: 'Dancing Script', cursive;
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   color: #4d2d18;
-  text-align: left;
-  line-height: 1.15;
+  text-align: justify;
+  line-height: 0.75;
 }
 
 .author {
