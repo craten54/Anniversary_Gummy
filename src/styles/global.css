@@ -9,6 +9,17 @@ a, button, .pull-handle,
   cursor: url('/images/gummy_cursor2.png')16 16, pointer !important;
 }
 
+section {
+  padding: 80px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  /* KUNCI: Biarkan user scroll ke samping jika konten terlalu lebar */
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 html,
 body {
   margin: 0;
@@ -795,13 +806,16 @@ section {
   width: 95%;
   /* Fleksibel mengikuti lebar layar */
   max-width: 850px;
+  min-width: 320px;
   /* Batas maksimal di layar besar (2K/FHD) */
-  margin: 50px auto;
+  margin: 50px 0;
   perspective: 2500px;
 
   /* KUNCI: Menjaga bentuk kotak tetap proporsional tanpa tinggi kaku */
   aspect-ratio: 17 / 10;
   height: auto;
+  left: 0;
+  transform: translateX(0);
 }
 
 /* Konten Tengah */
