@@ -1115,8 +1115,8 @@ section {
 
 @media (max-width: 721px) {
   .trifold-container {
-    width: 200px;
-    height: 150px;
+    width: 150px;
+    height: 100px;
   }
 
   .trifold-content {
@@ -1124,7 +1124,7 @@ section {
   }
 
   .photo-center img {
-    height: 175px;
+    height: 100px;
   }
 
   .flap {
@@ -1138,12 +1138,12 @@ section {
   }
 
   .handwritten-text {
-    font-size: 0.5rem;
-    line-height: 0.6;
+    font-size: 0.3rem;
+    line-height: 0.5;
   }
 
   .authortext {
-    font-size: 0.25rem;
+    font-size: 0.15rem;
   }
 
   .door {
