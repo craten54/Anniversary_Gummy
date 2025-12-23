@@ -1115,7 +1115,7 @@ section {
 
 @media (max-width: 721px) {
   .trifold-container {
-    width: 330px;
+    width: 310px;
     height: 200px;
   }
 
@@ -1144,6 +1144,10 @@ section {
 
   .authortext {
     font-size: 0.55rem;
+  }
+
+  .door {
+    padding: 10px 30px;
   }
 }
 
