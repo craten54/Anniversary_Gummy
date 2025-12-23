@@ -1138,12 +1138,12 @@ section {
   }
 
   .handwritten-text {
-    font-size: 0.3rem;
-    line-height: 0.5;
+    font-size: 0.25rem;
+    line-height: 0.7;
   }
 
   .authortext {
-    font-size: 0.15rem;
+    font-size: 0.1rem;
   }
 
   .door {
