@@ -772,19 +772,21 @@ section {
 
 .trifold-container {
   position: relative;
-  width: 100%;
-  max-width: 850px;
-  height: 500px;
   margin: 50px auto;
-  /* Perspective memberikan efek kedalaman agar ayunan terlihat 3D */
   perspective: 2500px;
+
+  /* LOGIKA SCALE OTOMATIS: */
+  /* Menghitung: "Lebar Layar / Lebar Ideal". Jika layar kecil, dia mengecil otomatis */
+  transform: scale(min(1, calc(100vw / 900)));
+  transform-origin: center top;
+  /* Agar tetap menempel di bawah judul */
+  will-change: transform;
 }
 
 /* Konten Tengah */
 .trifold-content {
   position: absolute;
   inset: 0;
-  height: 150%;
   background: #fffaf3;
   border: 2px solid #713229;
   display: flex;
@@ -794,7 +796,6 @@ section {
 }
 
 .photo-center img {
-  height: 525px;
   object-fit: contain;
 }
 
@@ -802,8 +803,6 @@ section {
 .flap {
   position: absolute;
   top: 0;
-  width: 50%;
-  height: 150%;
   z-index: 5;
   cursor: grab;
   touch-action: none;
@@ -839,7 +838,6 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
   box-sizing: border-box;
 }
 
@@ -852,7 +850,6 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 30px;
   background: #fbcad1;
   border: 4px solid #fbcad1;
   font-family: 'Dancing Script', cursive;
@@ -867,7 +864,6 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 30px;
   background: #fffaf3;
 }
 
@@ -885,10 +881,8 @@ section {
 /* Handwritten Text di dalam pintu */
 .handwritten-text {
   font-family: 'Dancing Script', cursive;
-  font-size: 1.45rem;
   color: #4d2d18;
   text-align: justify;
-  line-height: 0.75;
 }
 
 .author {
@@ -899,7 +893,6 @@ section {
 }
 .authortext {
   display: block;
-  font-size: 1.2rem;
   opacity: 0.6;
   font-style: italic;
   text-align: right;
@@ -948,6 +941,176 @@ section {
   background: #713229;
   color: #fff;
   border-color: #713229;
+}
+
+@media (min-width: 2562px) and (max-width: 3441px) {
+  .trifold-container {
+    width: 1500px;
+    height: 600px;
+  }
+
+  .trifold-content {
+    height: 150%;
+  }
+
+  .photo-center img {
+    height: 825px;
+  }
+
+  .flap {
+    width: 50%;
+    height: 150%;
+  }
+
+  .flap-front,
+  .flap-back {
+    padding: 30px;
+  }
+
+  .handwritten-text {
+    font-size: 2.4rem;
+    line-height: 1;
+  }
+
+  .authortext {
+    font-size: 2.15rem;
+  }
+}
+
+@media (min-width: 1922px) and (max-width: 2561px) {
+  .trifold-container {
+    width: 1150px;
+    height: 500px;
+  }
+
+  .trifold-content {
+    height: 150%;
+  }
+
+  .photo-center img {
+    height: 700px;
+  }
+
+  .flap {
+    width: 50%;
+    height: 150%;
+  }
+
+  .flap-front,
+  .flap-back {
+    padding: 30px;
+  }
+
+  .handwritten-text {
+    font-size: 2rem;
+    line-height: 0.8;
+  }
+
+  .authortext {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1371px) and (max-width: 1921px) {
+  .trifold-container {
+    width: 850px;
+    height: 400px;
+  }
+
+  .trifold-content {
+    height: 150%;
+  }
+
+  .photo-center img {
+    height: 525px;
+  }
+
+  .flap {
+    width: 50%;
+    height: 150%;
+  }
+
+  .flap-front,
+  .flap-back {
+    padding: 30px;
+  }
+
+  .handwritten-text {
+    font-size: 1.6rem;
+    line-height: 0.75;
+  }
+
+  .authortext {
+    font-size: 1.35rem;
+  }
+}
+
+@media (min-width: 722px) and (max-width: 1370px) {
+  .trifold-container {
+    width: 620px;
+    height: 350px;
+  }
+
+  .trifold-content {
+    height: 150%;
+  }
+
+  .photo-center img {
+    height: 425px;
+  }
+
+  .flap {
+    width: 50%;
+    height: 150%;
+  }
+
+  .flap-front,
+  .flap-back {
+    padding: 30px;
+  }
+
+  .handwritten-text {
+    font-size: 1.3rem;
+    line-height: 0.75;
+  }
+
+  .authortext {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 721px) {
+  .trifold-container {
+    width: 330px;
+    height: 200px;
+  }
+
+  .trifold-content {
+    height: 150%;
+  }
+
+  .photo-center img {
+    height: 225px;
+  }
+
+  .flap {
+    width: 50%;
+    height: 150%;
+  }
+
+  .flap-front,
+  .flap-back {
+    padding: 5px;
+  }
+
+  .handwritten-text {
+    font-size: 0.8rem;
+    line-height: 0.65;
+  }
+
+  .authortext {
+    font-size: 0.55rem;
+  }
 }
 
 /* Styling Header Gift */
