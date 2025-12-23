@@ -1013,8 +1013,8 @@ section {
 
 @media (min-width: 1371px) and (max-width: 1921px) {
   .trifold-container {
-    width: 720px;
-    height: 400px;
+    width: 730px;
+    height: 460px;
   }
 
   .trifold-content {
@@ -1036,12 +1036,12 @@ section {
   }
 
   .handwritten-text {
-    font-size: 1.2rem;
-    line-height: 0.7;
+    font-size: 1.35rem;
+    line-height: 0.65;
   }
 
   .authortext {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 
