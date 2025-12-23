@@ -1013,7 +1013,7 @@ section {
 
 @media (min-width: 1371px) and (max-width: 1921px) {
   .trifold-container {
-    width: 850px;
+    width: 720px;
     height: 400px;
   }
 
@@ -1036,16 +1036,16 @@ section {
   }
 
   .handwritten-text {
-    font-size: 1.6rem;
-    line-height: 0.75;
+    font-size: 1.575rem;
+    line-height: 0.7;
   }
 
   .authortext {
-    font-size: 1.35rem;
+    font-size: 1.325rem;
   }
 }
 
-@media (min-width: 722px) and (max-width: 1370px) {
+@media (min-width: 1208px) and (max-width: 1370px) {
   .trifold-container {
     width: 620px;
     height: 350px;
@@ -1076,6 +1076,40 @@ section {
 
   .authortext {
     font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 722px) and (max-width: 1207px) {
+  .trifold-container {
+    width: 525px;
+    height: 275px;
+  }
+
+  .trifold-content {
+    height: 150%;
+  }
+
+  .photo-center img {
+    height: 365px;
+  }
+
+  .flap {
+    width: 50%;
+    height: 150%;
+  }
+
+  .flap-front,
+  .flap-back {
+    padding: 30px;
+  }
+
+  .handwritten-text {
+    font-size: 1.05rem;
+    line-height: 0.65;
+  }
+
+  .authortext {
+    font-size: 0.8rem;
   }
 }
 
