@@ -1115,7 +1115,7 @@ section {
 
 @media (max-width: 721px) {
   .trifold-container {
-    width: 150px;
+    width: 175px;
     height: 100px;
   }
 
@@ -1139,7 +1139,7 @@ section {
 
   .handwritten-text {
     font-size: 0.275rem;
-    line-height: 0.7;
+    line-height: 0.75;
   }
 
   .authortext {
@@ -1148,7 +1148,7 @@ section {
 
   .door {
     font-size: 0.6rem;
-    padding: 1px 1px;
+    padding: 2px 5px;
   }
 }
 
