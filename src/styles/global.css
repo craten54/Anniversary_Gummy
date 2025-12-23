@@ -368,7 +368,7 @@ section {
 .pull-ribbon-section {
   width: 100%;
   overflow: hidden;
-  padding: 300px 0;
+  padding: 400px 0;
   position: relative;
   min-height: 650px;
 }
@@ -433,7 +433,7 @@ section {
   background: #FBCAD1;
   padding: 25px;
   border-radius: 18px;
-  margin-top: 450px;
+  margin-top: 700px;
   /* Jarak gantung di bawah pita */
   position: relative;
   box-shadow: 0 10px 25px #713229;
