@@ -949,3 +949,50 @@ section {
   color: #fff;
   border-color: #713229;
 }
+
+/* Styling Header Gift */
+.gift-header {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #713229;
+}
+
+.gift-header strong {
+  color: #f58ca3;
+  /* Warna pink untuk nama pengirim agar kontras */
+}
+
+/* Tombol Click Me */
+.drive-btn {
+  display: inline-block;
+  background: #fff;
+  color: #f58ca3;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  border: 2px solid #f58ca3;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(245, 140, 163, 0.2);
+  margin: 10px 0;
+}
+
+.drive-btn:hover {
+  background: #f58ca3;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(245, 140, 163, 0.4);
+}
+
+/* Artist Signature di paling bawah */
+.author {
+  display: block;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  text-align: right;
+  opacity: 0.7;
+  font-style: italic;
+  border-top: 1px dashed rgba(113, 50, 41, 0.2);
+  padding-top: 10px;
+}

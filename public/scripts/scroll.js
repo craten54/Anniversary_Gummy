@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
           document.body.style.overflow = "auto";
           
           if (bgmMain) {
-            bgmMain.volume = 0.005;
+            bgmMain.volume = 0.01;
             bgmMain.play().catch(err => {
               console.log("Autoplay dicegah browser, perlu interaksi user.");
             });
