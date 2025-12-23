@@ -1070,12 +1070,12 @@ section {
   }
 
   .handwritten-text {
-    font-size: 1.3rem;
-    line-height: 0.75;
+    font-size: 1.175rem;
+    line-height: 0.675;
   }
 
   .authortext {
-    font-size: 1.05rem;
+    font-size: 0.925rem;
   }
 }
 
