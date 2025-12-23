@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         isDragging = false;
         
         if (sfxOpen) {
+          sfxOpen.volume = 0.05;
           sfxOpen.currentTime = 0;
           sfxOpen.play(); 
         }
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
           document.body.style.overflow = "auto";
           
           if (bgmMain) {
-            bgmMain.volume = 0.01;
+            bgmMain.volume = 0.035;
             bgmMain.play().catch(err => {
               console.log("Autoplay dicegah browser, perlu interaksi user.");
             });
