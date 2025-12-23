@@ -1,6 +1,11 @@
 /* === COPY SEMUA KODE INI KE scroll.js === */
 window.history.scrollRestoration = "manual";
 window.scrollTo(0, 0);
+// Mematikan klik kanan pada semua gambar
+
+document.querySelectorAll('img').forEach(img => {
+  img.addEventListener('contextmenu', (e) => e.preventDefault());
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("scroll.js initialized 🎀");
